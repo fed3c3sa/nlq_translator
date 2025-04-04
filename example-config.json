@@ -16,7 +16,7 @@
           "cloud_id": "your elastic cloud_id",
           "username": "elastic",
           "password": "your-elastic-password",
-          "default_index": "jurisprudence_test_rally"
+          "default_index": "your-elastic-index"
         },
         "local_elasticsearch": {
           "hosts": ["localhost:9200"],
