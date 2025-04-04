@@ -19,7 +19,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize the translator
-config_manager = ConfigManager()
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Initialize components
+config_manager = ConfigManager(f"{project_root}/config.json")
 api_key_manager = APIKeyManager(config_manager)
 translator = NLQueryTranslator(api_key_manager=api_key_manager)
 
