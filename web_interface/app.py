@@ -18,8 +18,12 @@ from nlq_translator.config import APIKeyManager, ConfigManager
 app = Flask(__name__)
 CORS(app)
 
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Initialize components
+config_manager = ConfigManager(f"{project_root}/config.json")
+
 # Initialize the translator
-config_manager = ConfigManager()
 api_key_manager = APIKeyManager(config_manager)
 translator = NLQueryTranslator(api_key_manager=api_key_manager)
 

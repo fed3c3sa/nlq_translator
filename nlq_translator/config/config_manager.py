@@ -157,8 +157,8 @@ class APIKeyManager:
         Returns:
             The API key or None if not found.
         """
-        key = f"{provider.lower()}_api_key"
-        return self._config_manager.get(key)
+        key = f"{provider.lower()}"
+        return self._config_manager.get("api_keys").get(key)
     
     def set_api_key(self, provider: str, api_key: str, save: bool = True) -> None:
         """
