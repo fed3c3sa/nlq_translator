@@ -141,9 +141,11 @@ def main():
     if not args.command:
         print("No command specified. Use --help for usage information.")
         sys.exit(1)
-    
+        
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
     # Initialize components
-    config_manager = ConfigManager()
+    config_manager = ConfigManager(f"{project_root}/config.json")
     api_key_manager = APIKeyManager(config_manager)
     translator = NLQueryTranslator(api_key_manager=api_key_manager)
     
