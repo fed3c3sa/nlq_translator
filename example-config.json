@@ -1,0 +1,40 @@
+{
+    "api_keys": {
+      "openai": "your-openai-api-key-here",
+      "huggingface": "your-huggingface-api-key-here"
+    },
+    "default_model": {
+      "provider": "openai",
+      "model_name": "gpt-4",
+      "temperature": 0.1,
+      "max_tokens": 2000
+    },
+    "elasticsearch": {
+      "default_connection": "my_elastic_cloud",
+      "connections": {
+        "my_elastic_cloud": {
+          "cloud_id": "your elastic cloud_id",
+          "username": "elastic",
+          "password": "your-elastic-password",
+          "default_index": "jurisprudence_test_rally"
+        },
+        "local_elasticsearch": {
+          "hosts": ["localhost:9200"],
+          "username": "elastic",
+          "password": "your-local-password",
+          "default_index": "local_index"
+        }
+      }
+    },
+    "export": {
+      "default_format": "json",
+      "pretty_print": true,
+      "default_output_dir": "~/elasticsearch_queries"
+    },
+    "web_interface": {
+      "host": "0.0.0.0",
+      "port": 5000,
+      "debug": false
+    }
+  }
+  
